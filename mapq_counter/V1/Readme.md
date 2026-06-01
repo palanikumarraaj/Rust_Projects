@@ -11,7 +11,8 @@ This tool focus on tracking all available mapq based reads.
 ## mapq_counter tool usage
 
 ```
-./mapq_counter --help
+$ ./mapq_counter --help
+
 Counts reads per MAPQ score for each region in a 4-column BED file.
 Requires a BAM index (.bai) file alongside the input BAM.
 
@@ -50,4 +51,20 @@ Options:
   -V, --version
           Print version
 ```
+
+## usage
+
+```
+mapq_counter -i 121923_BatchEXT579_BQSR.bam -b /mnt/NGS/Database/hg38_exome_comp_spikein_v2.0.2_targets_sorted.re_annotated.bed --exclude-unmapped -t 30 -o 121923_mapq.tsv
+```
+
+The binary file can be copied and used directly for respective BAM and BED file used.
+
+If unmapped regions are not to be used then ** --exclude-unmapped ** can be used
+
+
+```
+for f in *.bam ; do ./mapq_counter -i $f -b /mnt/NGS1/WES_Analysis/Database/hg38_exome_comp_spikein_v2.0.2_targets_sorted.re_annotated.bed -t 30 -o $f"_mapq.tsv" ; done
+```
+
 
