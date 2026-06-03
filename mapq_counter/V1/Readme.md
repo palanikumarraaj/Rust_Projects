@@ -67,4 +67,21 @@ If unmapped regions are not to be used then ** --exclude-unmapped ** can be used
 for f in *.bam ; do ./mapq_counter -i $f -b /mnt/NGS1/WES_Analysis/Database/hg38_exome_comp_spikein_v2.0.2_targets_sorted.re_annotated.bed -t 30 -o $f"_mapq.tsv" ; done
 ```
 
+## development and testing
+
+The tool is developed in Rust, hence untill the basic 3 conditions are satisfied, it can used in wider range.
+
+3 conditions
+
+* glibc version - Should be in same version or higher version, but not lower than build version
+* CPU design/architecture - Should be in same type
+* Linux/Mac/Windows - OS type - Should be in same type
+
+
+```
+ldd --version  ## to check glibc version
+uname -a  ## to check CPU architecture and OS type and version
+```
+
+> Developed/Build version details - x86_64 CPU type, Ubuntu 20.04 version and glibc 2.31 version
 
