@@ -22,3 +22,10 @@ offtarget_counter tool supports multi-threading option and works on linux platfo
 
 offtarget calculation will helps to explore the efficiency of library preparation steps, especially the captured and sequenced reads came from pcr or target or not. Higher the offtarget region reads lower than depth of final variants.
 
+## offtarget-merge
+
+offtarget-merge is a extension of offtarget_counter tool, to combine multiple output files effectively and find collective common areas.
+
+This tool can be used to handle the output files of offtarget_counter binary tool. This should be considered as a supportive tool to handle the large file and filter the proper window region with certain conditions.  As a Rust tool, handling large dataset with multithread options and effective memory handling will be done in ease.
+
+ 
